@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.73.90
+IP 51.250.73.90
 
 Frontend https://mesto.chivchiev.nomoredomains.monster
 
