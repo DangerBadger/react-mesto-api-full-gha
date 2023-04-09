@@ -11,6 +11,13 @@ const STATUS = require('../utils/constants/status');
 router.use('/users', auth, userRoutes);
 router.use('/cards', auth, cardRoutes);
 
+// Проверка востановления сервера после падения
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 // Публчиные пути
 router.use('/signin', loginRoutes);
 router.use('/signup', signupRoutes);
