@@ -1,0 +1,11 @@
+@media screen and (max-width: 767px) {
+
+  .header__menu_open {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #545454;
+    padding: 13px 0 40px 0;
+    width: 95.5vw;
+    margin-bottom: 27px;
+  }
+}

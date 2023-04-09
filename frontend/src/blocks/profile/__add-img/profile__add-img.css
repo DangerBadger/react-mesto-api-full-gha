@@ -1,0 +1,18 @@
+.profile__add-img {
+  height: 22px;
+  margin: 0 0 0 0;
+  padding: 0;
+  transform: translateY(3px);
+}
+
+@media screen and (max-width: 949px) {
+  .profile__add-img {
+    transform: translateY(2px);
+  }
+}
+
+@media screen and (max-width: 449px) {
+  .profile__add-img {
+    height: 16px;
+  }
+}

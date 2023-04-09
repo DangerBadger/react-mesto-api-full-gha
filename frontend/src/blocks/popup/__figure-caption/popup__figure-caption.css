@@ -1,0 +1,14 @@
+.popup__figure-caption {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  text-overflow: clip;
+  white-space: pre-wrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  max-width: 57vw;
+}

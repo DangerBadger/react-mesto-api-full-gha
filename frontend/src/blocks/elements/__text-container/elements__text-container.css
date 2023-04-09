@@ -1,0 +1,9 @@
+.elements__text-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 19.5px 25px 21px;
+  border-radius: 0 0 10px 10px;
+  background-color: #fff;
+  align-items: center;
+  box-sizing: border-box;
+}

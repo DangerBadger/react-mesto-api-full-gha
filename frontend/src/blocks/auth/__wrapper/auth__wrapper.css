@@ -1,0 +1,17 @@
+.auth__wrapper {
+  margin: 60px auto 0;
+  padding: 0;
+  width: 358px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .header__auth-link{
+    margin: 0;
+  }
+  
+  .auth__wrapper {
+    margin-top: 40px;
+    width: 260px;
+  }
+}

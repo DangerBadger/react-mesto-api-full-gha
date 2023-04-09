@@ -1,0 +1,6 @@
+.header__menu-button_active {
+  background-image: url("../../../../images/header-menu-close.png");
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+}

@@ -1,0 +1,25 @@
+.header__auth-link {
+  color: #fff;
+  border: none;
+  max-height: fit-content;
+  margin: 0 0 0 24px;
+  padding: 0;
+  background-color: #000;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration: none;
+  transition: opacity .2s linear .05s;
+}
+
+.header__auth-link:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+
+  .header__auth-link{
+    margin: 0;
+  }
+}

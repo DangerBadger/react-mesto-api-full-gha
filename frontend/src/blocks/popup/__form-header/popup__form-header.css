@@ -1,0 +1,17 @@
+.popup__form-header {
+  margin: 34px 0 48px;
+  padding: 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  min-width: calc(100% - 72px);
+}
+
+@media screen and (max-width: 767px) {
+  .popup__form-header {
+    margin: 25px 0 75px;
+    font-size: 18px;
+    line-height: 22px;
+    min-width: calc(100% - 44px);
+  }
+}
