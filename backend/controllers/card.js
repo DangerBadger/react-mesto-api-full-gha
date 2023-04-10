@@ -9,7 +9,7 @@ module.exports.getCards = (req, res, next) => {
   Card.find({})
     .populate(['owner', 'likes'])
     .then((card) => {
-      res.status(200).send(card);
+      res.send(card.reverse());
     })
     .catch(next);
 };
@@ -44,7 +44,7 @@ module.exports.deleteCard = (req, res, next) => {
       }
       return Card.deleteOne({ _id: cardId })
         .then(() => {
-          res.status(200).send({ message: 'Карточка удалена' });
+          res.send({ message: 'Карточка удалена' });
         });
     })
     .catch((err) => {
@@ -69,7 +69,7 @@ module.exports.likeCard = (req, res, next) => {
       if (!card) {
         throw new NotFound(STATUS.CARD_NOT_FOUND);
       }
-      return res.status(200).send(card);
+      return res.send(card);
     })
     .catch((err) => {
       if (err instanceof Error.CastError) {
@@ -93,7 +93,7 @@ module.exports.dislikeCard = (req, res, next) => {
       if (!card) {
         throw new NotFound(STATUS.CARD_NOT_FOUND);
       }
-      return res.status(200).send(card);
+      return res.send(card);
     })
     .catch((err) => {
       if (err instanceof Error.CastError) {

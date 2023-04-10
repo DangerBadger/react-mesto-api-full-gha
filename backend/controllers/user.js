@@ -14,14 +14,14 @@ const { NODE_ENV } = process.env;
 module.exports.getUsers = (req, res, next) => {
   User.find({})
     .then((user) => {
-      res.status(200).send(user);
+      res.send(user);
     })
     .catch(next);
 };
 
 module.exports.getUserById = (req, res, next) => {
   findUserhandler(req.params.id)
-    .then((user) => res.status(200).send(user))
+    .then((user) => res.send(user))
     .catch((err) => {
       if (err instanceof Error.CastError) {
         next(new BadRequest(STATUS.BAD_REQUEST));
@@ -33,7 +33,7 @@ module.exports.getUserById = (req, res, next) => {
 
 module.exports.getUserInfo = (req, res, next) => {
   findUserhandler(req.user._id)
-    .then((user) => res.status(200).send(user))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
@@ -79,7 +79,7 @@ module.exports.updateUserInfo = (req, res, next) => {
       if (!user) {
         throw new NotFound(STATUS.USER_NOT_FOUND);
       }
-      return res.status(200).send(user);
+      return res.send(user);
     })
     .catch((err) => {
       if (err instanceof Error.ValidationError) {
@@ -99,7 +99,7 @@ module.exports.updateAvatar = (req, res, next) => {
       if (!user) {
         throw new NotFound(STATUS.USER_NOT_FOUND);
       }
-      return res.status(200).send(user);
+      return res.send(user);
     })
     .catch((err) => {
       if (err instanceof Error.ValidationError) {
@@ -118,12 +118,11 @@ module.exports.login = (req, res, next) => {
       const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
       const userObj = user.toObject();
       delete userObj.password;
-      res.status(200)
-        .cookie('jwt', token, {
-          maxAge: 3600000 * 24 * 7,
-          httpOnly: true,
-          sameSite: false,
-        })
+      res.cookie('jwt', token, {
+        maxAge: 3600000 * 24 * 7,
+        httpOnly: true,
+        sameSite: false,
+      })
         .send(userObj);
     })
     .catch(next);
@@ -131,8 +130,7 @@ module.exports.login = (req, res, next) => {
 
 module.exports.logout = async (req, res, next) => {
   try {
-    res.status(200)
-      .clearCookie('jwt')
+    res.clearCookie('jwt')
       .send({ message: 'Токен удалён' });
   } catch (err) {
     next(err);

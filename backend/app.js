@@ -1,19 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate'); /* Если запрос не проходит валидацию, celebrate передаст его в этот мидлвэр */
 const cookieParser = require('cookie-parser');
+const limiter = require('./utils/limiter');
 const { MESTO_DB_CONNECT, PORT } = require('./config');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
 const routes = require('./routes');
 const errorHandler = require('./middlewares/errorHandler');
-
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-});
 
 // Подключение express
 const app = express();
