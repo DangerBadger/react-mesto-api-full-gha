@@ -1,9 +1,7 @@
 // Класс настроек для api
 export const apiSettings = {
-  // baseUrl: 'https://api.mesto.chivchiev.nomoredomains.monster',
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.mesto.chivchiev.nomoredomains.monster',
 };
 
 // URL для запросов регистрации/авторизации пользователя
-// export const BASE_URL = 'https://api.mesto.chivchiev.nomoredomains.monster';
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.mesto.chivchiev.nomoredomains.monster';
